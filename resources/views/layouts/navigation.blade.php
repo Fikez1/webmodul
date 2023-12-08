@@ -16,7 +16,15 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                @hasrole('Pustakawan')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('role')" :active="request()->routeIs('role')">
+                        {{ __('Role') }}
+</X-nav-link>
+//untuk menyembunyikan menu dari user yang memeliki role anggota.
+
             </div>
+            @endhasrole
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
